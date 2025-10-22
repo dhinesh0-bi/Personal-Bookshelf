@@ -6,8 +6,6 @@ const path = require('path');
 
 const app = express();
 const PORT = 8080;
-const cors = require('cors');
-
 // --- Get your frontend's live URL from Render ---
 const frontendURL = 'https://my-bookshelf-app.onrender.com'; // <-- PASTE YOUR FRONTEND URL HERE
 
