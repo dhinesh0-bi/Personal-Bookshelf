@@ -6,8 +6,14 @@ const path = require('path');
 
 const app = express();
 const PORT = 8080;
+const cors = require('cors');
 
-app.use(cors()); 
+// --- Get your frontend's live URL from Render ---
+const frontendURL = 'https://my-bookshelf-app.onrender.com'; // <-- PASTE YOUR FRONTEND URL HERE
+
+app.use(cors({
+  origin: frontendURL
+}));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
