@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const SERVER_URL = 'http://localhost:8080';
+const SERVER_URL = 'https://my-bookshelf-server.onrender.com';
 
 export default function BookList({ shouldRefresh }) {
   const [books, setBooks] = useState([]);
