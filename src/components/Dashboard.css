@@ -136,3 +136,81 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+/* --- New Book List Styles --- */
+
+/* This turns your list into a responsive grid */
+.book-list-grid {
+  display: grid;
+  /* Creates columns that are at least 300px wide */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  background-color: #f9fafb; /* A very light grey background */
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensures rounded corners are clean */
+}
+
+.book-card-content {
+  padding: 16px;
+  flex-grow: 1; /* Makes content fill the space */
+}
+
+.book-card-content h3 {
+  font-size: 1.25rem;
+  color: #1a202c;
+  margin-bottom: 4px;
+  /* Truncate long titles */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.book-card-content p {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 16px;
+}
+
+.book-card-actions {
+  display: flex;
+  gap: 10px;
+  padding: 0 16px 16px; /* Padding on all sides except top */
+}
+
+.book-card-actions a,
+.book-card-actions button {
+  flex-grow: 1; /* Make buttons share space */
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* "Read Now" Button Style */
+.book-card-actions a {
+  background-color: #3182ce;
+  color: white;
+}
+.book-card-actions a:hover {
+  background-color: #2b6cb0;
+}
+
+/* New "Delete" Button Style */
+.delete-button {
+  background-color: #e2e8f0;
+  color: #2d3748;
+}
+.delete-button:hover {
+  background-color: #cbd5e0;
+}
