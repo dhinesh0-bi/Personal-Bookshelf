@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 const PORT = 8080;
 // --- Get your frontend's live URL from Render ---
-const frontendURL = 'https://my-bookshelf-app.onrender.com'; // <-- PASTE YOUR FRONTEND URL HERE
+const frontendURL = 'https://68f7451e7cd13e72582d50f0--dreamy-biscuit-43d5d8.netlify.app/'; // <-- PASTE YOUR FRONTEND URL HERE
 
 app.use(cors({
   origin: frontendURL
