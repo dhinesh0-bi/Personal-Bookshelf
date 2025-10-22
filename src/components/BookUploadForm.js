@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+
+const SERVER_URL = 'https://my-bookshelf-server.onrender.com';
+
 export default function BookUploadForm({ onBookUploaded }) {
   const [uploading, setUploading] = useState(false);
 
@@ -10,7 +13,7 @@ export default function BookUploadForm({ onBookUploaded }) {
     const formData = new FormData(e.target);
     
     try {
-      const res = await fetch('http://localhost:8080/upload', {
+      const res = await fetch(`${SERVER_URL}/upload`, {
         method: 'POST',
         body: formData,
       });

@@ -9,8 +9,9 @@ export default function BookList({ shouldRefresh }) {
   const loadBooks = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`${SERVER_URL}/books`);
-      const data = await res.json();
+      
+          const res = await fetch(`${SERVER_URL}/books`);      
+          const data = await res.json();
       setBooks(data);
     } catch (error) {
       console.error('Error fetching books:', error);
