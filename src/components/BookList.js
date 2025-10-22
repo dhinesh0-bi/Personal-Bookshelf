@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-const SERVER_URL = 'https://my-bookshelf-server.onrender.com'; // Or your localhost
+const SERVER_URL = 'https://my-bookshelf-server.onrender.com';
 
 export default function BookList({ shouldRefresh, onBookAction }) {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // This function fetches books from the server
   const loadBooks = async () => {
     setLoading(true);
     try {
@@ -19,12 +18,9 @@ export default function BookList({ shouldRefresh, onBookAction }) {
       setLoading(false);
     }
   };
-
-  // --- NEW: Handle Delete Function ---
   const handleDelete = async (bookId, title) => {
-    // Show a confirmation popup
     if (!window.confirm(`Are you sure you want to delete "${title}"?`)) {
-      return; // Stop if the user clicks "Cancel"
+      return; 
     }
 
     try {
@@ -35,7 +31,6 @@ export default function BookList({ shouldRefresh, onBookAction }) {
       const data = await res.json();
       alert(data.message);
       
-      // Use the prop from Dashboard.js to trigger a refresh
       if (onBookAction) {
         onBookAction();
       }
@@ -45,13 +40,10 @@ export default function BookList({ shouldRefresh, onBookAction }) {
       alert('Failed to delete book.');
     }
   };
-
-  // Fetch books when the component first loads
   useEffect(() => {
     loadBooks();
   }, []);
   
-  // Re-fetch books whenever the 'shouldRefresh' prop changes
   useEffect(() => {
     if (shouldRefresh > 0) {
       loadBooks();
@@ -71,11 +63,10 @@ export default function BookList({ shouldRefresh, onBookAction }) {
   return (
     <section className="widget">
       <h2>My Library</h2>
-      <div id="book-list" className="book-list-grid"> {/* <-- Use the new grid class */}
+      <div id="book-list" className="book-list-grid"> 
         {books.length === 0 ? (
           <p>Your library is empty. Upload a book!</p>
         ) : (
-          // --- NEW: Card Layout ---
           books.map(book => (
             <div key={book.id} className="book-card">
               <div className="book-card-content">
