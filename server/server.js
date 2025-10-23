@@ -13,7 +13,7 @@ if (!fs.existsSync(uploadsDir)) {
     console.log('Created uploads directory.');
 }
 const allowedOrigins = [
-    'https://dreamy-biscuit-43d5d8.netlify.app', 
+    'https://personal-bookshelf-p8pg.onrender.com', 
     'http://localhost:3000'                      
 ];
 
